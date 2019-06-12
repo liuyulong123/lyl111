@@ -14,7 +14,7 @@ export class ResourceLoader{
       // map.set(key,val) 设置map的key-val值
       this.map.set(k,img);
     }
-    console.log(this.map);
+    // console.log(this.map);
   }
 
   onloaded(callback){
