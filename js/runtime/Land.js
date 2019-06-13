@@ -11,6 +11,7 @@ export class Land extends Sprite{
     const y = height-img.height;
     super(img,0,0,img.width,img.height,0,y,img.width,img.height);
     this.speed = 2;// 地板向左移动的速度
+
   }
 
   draw(){
@@ -20,12 +21,13 @@ export class Land extends Sprite{
       this.x = 0;
     }
     // 重写父类的draw方法
-    super.draw(this.img,this.srcX,this.srcY,this.srcW,this.srcH,this.x,this.y,this.width,this.height);
+    // super.draw(this.img,this.srcX,this.srcY,this.srcW,this.srcH,this.x,this.y,this.width,this.height);
+    // 因为上面传入的参数与默认值一样，所以不传参数，使用默认值
+    super.draw();
   }
 
 
 }
-
 
 
 

@@ -4,6 +4,7 @@ import { Background } from "./js/runtime/Background.js";
 import { Director } from "./js/Director.js";
 import { Land } from "./js/runtime/Land.js";
 
+
 // 程序主类
 export class Main{
   constructor(){
@@ -46,7 +47,10 @@ export class Main{
     this.dataStore
                 .put('background',new Background())
                 .put('land',new Land())
+                .put('pipes',[])
 
+    // 创建水管
+    this.director.createPipes();
     // 导演发令执行
     this.director.run();
   }
