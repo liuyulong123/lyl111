@@ -34,25 +34,27 @@ export class Director{
   run(){
     // 获取背景图
     this.dataStore.get('background').draw();
-    this.dataStore.get('land').draw();
+    
     // 获取所有水管的数组
     const pipes = this.dataStore.get('pipes');
     // 删除出界的一组水管
-    if(pipes[0].x+pipes[0].width<0&&pipes.length==4){
+    if(pipes[0].x+pipes[0].width<0 && pipes.length==4){
       pipes.shift();
       pipes.shift();
     }
 
     // 创建水管
     const width = this.dataStore.canvas.width/2;
-    if(pipes[0].x <= width-pipes[0].width&&pipes.length==2){
+    if(pipes[0].x <= width-pipes[0].width && pipes.length==2){
       this.createPipes();
     }
 
     for(let i=0;i<pipes.length;i++){
       pipes[i].draw();
     }
-    
+
+    this.dataStore.get('birds').draw();
+    this.dataStore.get('land').draw();
     // 定时器，让run不停的运行
     // setTimeout(()=>this.run(),10);
     let time = requestAnimationFrame(()=>this.run());
