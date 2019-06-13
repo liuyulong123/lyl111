@@ -20,6 +20,14 @@ export class Director{
     // 获取背景图
     this.dataStore.get('background').draw();
     this.dataStore.get('land').draw();
+
+    
+    
+    // 定时器，让run不停的运行
+    // setTimeout(()=>this.run(),10);
+    let time = requestAnimationFrame(()=>this.run());
+    // 清除time
+    // cancelAnimationFrame(time);
   }
 }
 
