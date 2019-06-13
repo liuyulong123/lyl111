@@ -19,7 +19,7 @@ export class Director{
   run(){
     // 获取背景图
     this.dataStore.get('background').draw();
-    
+    this.dataStore.get('land').draw();
   }
 }
 

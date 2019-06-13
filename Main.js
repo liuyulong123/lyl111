@@ -2,6 +2,7 @@ import { ResourceLoader } from "./js/base/ResourceLoader.js";
 import { DataStore } from "./js/base/DataStore.js";
 import { Background } from "./js/runtime/Background.js";
 import { Director } from "./js/Director.js";
+import { Land } from "./js/runtime/Land.js";
 
 // 程序主类
 export class Main{
@@ -44,6 +45,7 @@ export class Main{
     // 使用put保存的数据，在游戏结束时会全部销毁
     this.dataStore
                 .put('background',new Background())
+                .put('land',new Land())
 
     // 导演发令执行
     this.director.run();
