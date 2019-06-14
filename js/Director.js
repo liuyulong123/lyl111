@@ -35,7 +35,7 @@ export class Director{
   birdsEvent(){
     // 单击时，将小鸟自由落体的时间重置为0 
     // this.dataStore.get('birds').y -= 30;
-    this.dataStore.get('birds').time = 0;
+    this.dataStore.get('birds').time = 10;
   }
 
   // 判断小鸟与某一个水管是否撞击
