@@ -13,7 +13,8 @@ export class Main{
   constructor(){
     console.log('game start!');
     // 获取canvas
-    this.canvas = document.getElementById('canvas');
+    // this.canvas = document.getElementById('canvas');
+    this.canvas = wx.createCanvas();
     this.ctx = this.canvas.getContext('2d');
     // 获取资源加载器
     this.loader = new ResourceLoader();
@@ -21,7 +22,8 @@ export class Main{
     this.dataStore = DataStore.getInstance();
     // 获取导演
     this.director = Director.getInstance();
-    
+    this.ctx.fillStyle = '#ffffff';
+    this.ctx.fillText('XXXX',100,100);
     // 调用ResourceLoader的onloaded方法获取已经加载成功的图片
     this.loader.onloaded(map=>this.onResourceLoaded(map));
     // 画图
@@ -66,7 +68,8 @@ export class Main{
 
   // 添加屏幕单击事件
   registEvent(){
-    this.canvas.addEventListener('touchstart',e=>{
+    // this.canvas.addEventListener('touchstart',e=>{
+    wx.onTouchStart(()=>{
       // 判断游戏是否结束
       if(this.director.isGameOver){
         // 如果游戏结束，点击重新开始
