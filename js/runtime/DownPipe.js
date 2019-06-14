@@ -12,7 +12,7 @@ export class DownPipe extends Pipe{
 
   draw(){
     // 上下水管中间的间距
-    const gap = DataStore.getInstance().canvas.height/6;
+    const gap = DataStore.getInstance().canvas.height/4;
     this.y = gap + this.top;
     super.draw();
   }
